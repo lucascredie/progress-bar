@@ -5,7 +5,16 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <ProgressBar></ProgressBar>
+
+      <ProgressBar
+        type="line"
+        name="myBar"
+        width="240"
+        height="50"
+        progress="50"
+        total="100"
+      />
+      
     </div>
   );
 }
