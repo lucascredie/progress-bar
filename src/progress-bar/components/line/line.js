@@ -3,8 +3,8 @@ import React from 'react';
 class LineBar extends React.Component {
     
     render() {
-        let duration = {transition: "500ms"};
-        let roundness = "0px";
+        let duration = {transition: this.props.all.animationDuration};
+        let roundness = this.props.all.radius;
         
         let dimensions = {
             width: this.props.all.width,
@@ -12,14 +12,14 @@ class LineBar extends React.Component {
         };
 
         let progress = (dimensions.width/this.props.all.total) * this.props.all.progress; //in pixels, not percentage
-        
+   
         let colors = {
-            innerColor: "#555000",
-            outterColor: "#FF0000"
+            innerColor: this.props.all.innerColor,
+            outterColor: this.props.all.outterColor
         };
 
         return (
-            <svg className={this.props.all.name} style={dimensions}>
+            <svg id={this.props.all.id} className={this.props.all.className} style={dimensions}>
                 <rect x="0" y="0" width={dimensions.width} height={dimensions.height} fill={colors.innerColor} rx={roundness} />
                 <rect x="0" y="0" width={progress} height={dimensions.height} fill={colors.outterColor} style={duration} rx={roundness} />
             </svg>

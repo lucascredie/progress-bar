@@ -27,6 +27,8 @@ import CustomBar from './components/custom-shape/custom'
         AnimationDelay: 400 \\ "on view"
  */
 
+//  TODO: inner radius vs outter radius
+
 class ProgressBar extends React.Component {
     render() {
         //decides on type of component to display
